@@ -113,15 +113,12 @@
 
 // Box search result
 .search-result {
-    min-width: 230px;
+    padding: 12px 24px;
     min-height: 50px;
     max-height: calc(90vh - 60px);
+    min-width: 230px;
     font-size: 1.4rem;
-    padding: 12px 24px;
     width: 420px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
     overflow-y: auto;
     overscroll-behavior: contain;
 }
@@ -187,5 +184,52 @@
     background-color: #ccc;
 }
 
-.button {
+// container my courses
+.container-my-course {
+    min-width: 230px;
+    min-height: 50px;
+    max-height: calc(90vh - 60px);
+    font-size: 1.4rem;
+    width: 412px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
 }
+
+.header-my-source {
+    padding: 14px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    a[href] {
+        color: var(--primary);
+    }
+}
+
+.see-all-my-course {
+    color: var(--primary);
+    padding: 8px;
+}
+
+.my-course-content {
+    max-height: 68vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+// min-width: 230px;
+// min-height: 50px;
+// max-height: calc(90vh - 60px);
+// font-size: 1.4rem;
+// padding: 12px 24px;
+// width: 420px;
+// background: #fff;
+// border-radius: 10px;
+// box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
+// overflow-y: auto;
+// overscroll-behavior: contain;

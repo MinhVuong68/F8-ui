@@ -1,0 +1,8 @@
+.wrapper {
+    min-height: 50px;
+    max-height: calc(90vh - 60px);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
+    overflow: hidden;
+}

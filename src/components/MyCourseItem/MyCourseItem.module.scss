@@ -1,0 +1,33 @@
+.my-course-item {
+    border-radius: 10px;
+    margin: 0 8px;
+    padding: 8px 12px;
+    display: flex;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.05);
+    }
+}
+
+.my-course-image {
+    background-color: #ebebeb;
+    border-radius: 8px;
+    display: block;
+    line-height: 67px;
+    min-height: 67px;
+    text-align: center;
+    width: 120px;
+}
+
+.my-course-info {
+    margin-left: 12px;
+    h3 {
+        font-size: 1.4rem;
+        margin: 4px 0 0;
+    }
+    p {
+        color: #666;
+        font-size: 1.2rem;
+        margin: 4px 0 0;
+    }
+}
