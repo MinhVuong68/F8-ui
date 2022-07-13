@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
+import CourseItem from '~/components/CourseItem';
+import { Fragment } from 'react';
 
 const cx = classNames.bind(styles);
 
 const Header = () => {
+    const userLogin = true;
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -37,54 +40,10 @@ const Header = () => {
                                         Xem thêm
                                     </a>
                                 </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-                                    <span>Xây Dựng Website với ReactJS</span>
-                                </div>
-                                <div className={cx('course-item')}>
-                                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/6.png" alt="reactjs" />
-                                    <span>Node & ExpressJS</span>
-                                </div>
+                                <CourseItem />
+                                <CourseItem />
+                                <CourseItem />
+                                <CourseItem />
                             </div>
                         )}
                     >
@@ -104,7 +63,21 @@ const Header = () => {
                     </Tippy>
                 </div>
                 <div className={cx('action')}>
-                    <button className={cx('button')}>Đăng nhập</button>
+                    {userLogin ? (
+                        <Fragment>
+                            <button className={cx('my-course')}>Khóa học của tôi</button>
+                            <div className={cx('icon-notify')}>
+                                <FontAwesomeIcon icon={faBell} />
+                            </div>
+                            <img
+                                className={cx('avatar')}
+                                src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                                alt="vuong-nguyen"
+                            />
+                        </Fragment>
+                    ) : (
+                        <button className={cx('button')}>Đăng nhập</button>
+                    )}
                 </div>
             </div>
         </header>

@@ -51,7 +51,6 @@
     justify-content: center;
 
     input {
-        font-size: 100%;
         height: 100%;
         outline: none;
         border: none;
@@ -155,21 +154,38 @@
     color: var(--primary);
 }
 
-.course-item {
-    padding: 6px 0;
-    display: flex;
-    align-items: center;
+.my-course {
+    background-color: transparent;
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 8px 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
-    img {
-        height: 32px;
-        width: 32px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+.icon-notify {
+    padding: 8px;
+    color: #707070;
+    font-size: 1.8rem;
+    cursor: pointer;
 
-    span {
-        font-size: 1.4rem;
-        line-height: 1.6rem;
-        margin-left: 12px;
+    &:hover {
+        color: #000;
     }
+}
+
+.avatar {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 12px;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.button {
 }
