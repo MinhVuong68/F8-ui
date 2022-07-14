@@ -57,21 +57,6 @@ const Header = () => {
                                     <CourseItem />
                                     <CourseItem />
                                     <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
-                                    <CourseItem />
                                 </div>
                             </Wrapper>
                         )}
@@ -123,15 +108,59 @@ const Header = () => {
                             >
                                 <button className={cx('my-course')}>Khóa học của tôi</button>
                             </Tippy>
-
                             <div className={cx('icon-notify')}>
                                 <FontAwesomeIcon icon={faBell} />
                             </div>
-                            <img
-                                className={cx('avatar')}
-                                src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
-                                alt="vuong-nguyen"
-                            />
+
+                            <Tippy
+                                interactive={true}
+                                placement="bottom-end"
+                                trigger="click"
+                                render={(attrs) => (
+                                    <Wrapper>
+                                        <div className={cx('username-wrapper')} tabIndex="-1" {...attrs}>
+                                            <div className={cx('user')}>
+                                                <img
+                                                    src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                                                    className={cx('user-avatar')}
+                                                    alt="vuong"
+                                                />
+                                                <div className={cx('user-info')}>
+                                                    <h3 className={cx('name')}>Vương Nguyễn</h3>
+                                                    <p className={cx('username')}>@vuong608</p>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div className={cx('user-func')}>
+                                                <Link to="/profile">Trang cá nhân</Link>
+                                            </div>
+                                            <hr />
+                                            <div className={cx('user-func')}>
+                                                <Link to="/profile">Viết blog</Link>
+                                                <Link to="/profile">Bài viết của tôi</Link>
+                                            </div>
+
+                                            <hr />
+                                            <div className={cx('user-func')}>
+                                                <Link to="/profile">Bài viết đã lưu</Link>
+                                            </div>
+
+                                            <hr />
+
+                                            <div className={cx('user-func')}>
+                                                <Link to="/setting">Cài đặt</Link>
+                                                <Link to="/setting">Đăng xuất</Link>
+                                            </div>
+                                        </div>
+                                    </Wrapper>
+                                )}
+                            >
+                                <img
+                                    className={cx('avatar')}
+                                    src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                                    alt="vuong-nguyen"
+                                />
+                            </Tippy>
                         </Fragment>
                     ) : (
                         <button className={cx('button')}>Đăng nhập</button>

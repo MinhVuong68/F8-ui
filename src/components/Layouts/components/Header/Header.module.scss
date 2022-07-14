@@ -222,6 +222,49 @@
     overscroll-behavior: contain;
 }
 
+//box username
+
+.username-wrapper {
+    min-width: 230px;
+    padding: 8px 24px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+.user-info {
+    margin-left: 12px;
+}
+
+.name {
+    color: #292929;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.username {
+    color: #757575;
+    font-size: 1.4rem;
+    margin-top: 4px;
+}
+
+.user-func a {
+    color: #666;
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+}
+
 // min-width: 230px;
 // min-height: 50px;
 // max-height: calc(90vh - 60px);
