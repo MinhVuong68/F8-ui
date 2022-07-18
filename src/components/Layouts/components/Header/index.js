@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faMagnifyingGlass, faSpinner, faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless';
@@ -9,8 +9,40 @@ import styles from './Header.module.scss';
 import CourseItem from '~/components/CourseItem';
 import MyCourseItem from '~/components/MyCourseItem';
 import Wrapper from '~/components/Popper/Wrapper';
+import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        title: 'Trang cá nhân',
+        to: '/profile',
+        separate: <hr />,
+    },
+    {
+        title: 'Viết blog',
+        to: '/new-port',
+    },
+    {
+        title: 'Bài viết của tôi',
+        to: '/profile',
+        separate: <hr />,
+    },
+    {
+        title: 'Bài viết đã lưu',
+        to: '/profile',
+        separate: <hr />,
+    },
+    {
+        title: 'Cài đặt',
+        to: '/setting',
+    },
+    {
+        title: 'Đăng xuất',
+        to: '/login',
+    },
+];
 
 const Header = () => {
     const [close, setClose] = useState(true);
@@ -43,6 +75,8 @@ const Header = () => {
                                             icon={faMagnifyingGlass}
                                             className={cx('icon-search-header')}
                                         />
+                                        <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />
+
                                         <span>Kết quả tìm kiếm cho 'javascript'</span>
                                     </div>
                                     <div className={cx('type-result-search')}>
@@ -88,9 +122,10 @@ const Header = () => {
                                         <Wrapper>
                                             <div className={cx('header-my-source')}>
                                                 <h4>Khóa học của tôi</h4>
-                                                <a href="/" className={cx('see-all-my-course')}>
+
+                                                <Button className={cx('see-all-my-course')} to="/my-course">
                                                     Xem tất cả
-                                                </a>
+                                                </Button>
                                             </div>
                                             <div className={cx('my-course-content')}>
                                                 <MyCourseItem />
@@ -112,58 +147,18 @@ const Header = () => {
                                 <FontAwesomeIcon icon={faBell} />
                             </div>
 
-                            <Tippy
-                                interactive={true}
-                                placement="bottom-end"
-                                trigger="click"
-                                render={(attrs) => (
-                                    <Wrapper>
-                                        <div className={cx('username-wrapper')} tabIndex="-1" {...attrs}>
-                                            <div className={cx('user')}>
-                                                <img
-                                                    src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
-                                                    className={cx('user-avatar')}
-                                                    alt="vuong"
-                                                />
-                                                <div className={cx('user-info')}>
-                                                    <h3 className={cx('name')}>Vương Nguyễn</h3>
-                                                    <p className={cx('username')}>@vuong608</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div className={cx('user-func')}>
-                                                <Link to="/profile">Trang cá nhân</Link>
-                                            </div>
-                                            <hr />
-                                            <div className={cx('user-func')}>
-                                                <Link to="/profile">Viết blog</Link>
-                                                <Link to="/profile">Bài viết của tôi</Link>
-                                            </div>
-
-                                            <hr />
-                                            <div className={cx('user-func')}>
-                                                <Link to="/profile">Bài viết đã lưu</Link>
-                                            </div>
-
-                                            <hr />
-
-                                            <div className={cx('user-func')}>
-                                                <Link to="/setting">Cài đặt</Link>
-                                                <Link to="/setting">Đăng xuất</Link>
-                                            </div>
-                                        </div>
-                                    </Wrapper>
-                                )}
-                            >
+                            <Menu items={MENU_ITEMS}>
                                 <img
                                     className={cx('avatar')}
                                     src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
                                     alt="vuong-nguyen"
                                 />
-                            </Tippy>
+                            </Menu>
                         </Fragment>
                     ) : (
-                        <button className={cx('button')}>Đăng nhập</button>
+                        <Button primary rounded to="/login">
+                            Đăng nhập
+                        </Button>
                     )}
                 </div>
             </div>

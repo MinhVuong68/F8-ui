@@ -99,18 +99,6 @@
     justify-content: flex-end;
 }
 
-.button {
-    background-color: var(--primary);
-    border-radius: 999px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding: 9px 20px;
-    border: none;
-    outline: none;
-}
-
 // Box search result
 .search-result {
     padding: 12px 24px;
@@ -124,15 +112,21 @@
 }
 
 .search-header {
-    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6px 0 0;
     span {
+        margin-left: 22px;
         opacity: 0.7;
     }
 }
 
-.icon-search-header {
+.icon-search-header,
+.loading {
+    position: absolute;
     margin-right: 8px;
-    opacity: 0.5;
+    color: rgba(22, 24, 35, 0.34);
 }
 
 .type-result-search {
@@ -146,9 +140,11 @@
         opacity: 0.5;
     }
 }
-
-.see-more:hover {
-    color: var(--primary);
+.see-more {
+    color: #333;
+    &:hover {
+        color: var(--primary);
+    }
 }
 
 .my-course {
@@ -227,35 +223,6 @@
 .username-wrapper {
     min-width: 230px;
     padding: 8px 24px;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-}
-
-.user-avatar {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px 0;
-}
-
-.user-info {
-    margin-left: 12px;
-}
-
-.name {
-    color: #292929;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.username {
-    color: #757575;
-    font-size: 1.4rem;
-    margin-top: 4px;
 }
 
 .user-func a {

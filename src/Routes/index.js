@@ -3,8 +3,10 @@ import Blog from '~/pages/Blog';
 import Course from '~/pages/Course';
 import Profile from '~/pages/Profile';
 import Setting from '~/pages/Setting';
+import Login from '~/pages/Login';
 import NoSideBar from '~/components/Layouts/NoSideBar';
 import NotFound from '~/pages/NotFound';
+import MyCourse from '~/pages/MyCourse';
 
 const publicRoutes = [
     {
@@ -20,6 +22,10 @@ const publicRoutes = [
         element: Course,
     },
     {
+        path: '/my-course',
+        element: MyCourse,
+    },
+    {
         path: '/profile',
         element: Profile,
         layout: NoSideBar,
@@ -28,6 +34,11 @@ const publicRoutes = [
         path: '/setting',
         element: Setting,
         layout: NoSideBar,
+    },
+    {
+        path: '/login',
+        element: Login,
+        layout: null,
     },
     {
         path: '*',

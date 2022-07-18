@@ -1,0 +1,57 @@
+.menu-item {
+    font-weight: 400;
+    color: #666;
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+        color: #292929;
+    }
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 8px 0;
+}
+
+.menu-list {
+    min-width: 230px;
+    padding: 8px 24px;
+}
+
+.username-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    height: 50px;
+    margin: 10px 0;
+    object-fit: cover;
+    width: 50px;
+}
+
+.user-info {
+    margin-left: 12px;
+}
+
+.name {
+    color: #292929;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.username {
+    color: #757575;
+    font-size: 1.4rem;
+    margin-top: 4px;
+}
