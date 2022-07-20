@@ -8,7 +8,6 @@ import Wrapper from '../Wrapper';
 const cx = classNames.bind(styles);
 
 const Menu = ({ items, children }) => {
-    console.log(items);
     const renderItem = () => {
         return items.map((item, index) => {
             return <MenuItem key={index} data={item} />;

@@ -2,11 +2,11 @@ import styles from './CourseItem.module.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
-const CourseItem = () => {
+const CourseItem = ({ data }) => {
     return (
         <div className={cx('course-item')}>
-            <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="reactjs" />
-            <span>Xây Dựng Website với ReactJS</span>
+            <img src={data.image_url} alt="reactjs" />
+            <span>{data.title}</span>
         </div>
     );
 };
