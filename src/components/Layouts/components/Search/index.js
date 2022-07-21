@@ -15,8 +15,8 @@ const Search = () => {
     const [searchResult, setSearchResult] = useState([]);
     const [showValueSearch, setShowValueSearch] = useState(true);
     const [loading, setLoading] = useState(false);
-    const [titleSearch, setTitleSearch] = useState('');
-    const [titleResultSearch, setTitleResultSearch] = useState('');
+    const [titleSearch, setTitleSearch] = useState(''); // Kết quả tìm kiếm cho 'js'
+    const [titleResultSearch, setTitleResultSearch] = useState(''); // Tìm 'js'
 
     const inputSearch = useRef();
     useEffect(() => {
